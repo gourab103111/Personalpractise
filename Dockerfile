@@ -12,21 +12,29 @@ LABEL "maintainer"="gourab103111"
 RUN apt update \
 	&& apt -y upgrade \
 	&& apt install -y hub \
+	&& apt install nodejs \
+	&& apt install npm \
 	&& apt autoremove \
 	&& apt autoclean \
-	&& apt clean
-
-#ADD entrypoint.sh /entrypoint.sh
-#RUN chmod +x /entrypoint.sh
-#ENTRYPOINT ["/entrypoint.sh"]
-
-FROM node:17-alpine3.14
-
+	&& apt clean \
+	&& npm install --global yarn 
+	
 RUN yarn global add firebase-tools \
     && apk update \
     && apk add git 
 
-ADD firebaseentrypoint.sh /firebaseentrypoint.sh
-RUN chmod +x /firebaseentrypoint.sh
-ENTRYPOINT ["/firebaseentrypoint.sh"]	
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+#FROM node:17-alpine3.14
+
+#RUN yarn global add firebase-tools \
+#    && apk update \
+#    && apk add git 
+
+#ADD firebaseentrypoint.sh /firebaseentrypoint.sh
+#RUN chmod +x /firebaseentrypoint.sh
+#ENTRYPOINT ["/firebaseentrypoint.sh"]	
 

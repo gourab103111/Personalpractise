@@ -1,7 +1,5 @@
 #!/bin/sh
 
-VERSION_NAME=`grep -oP 'versionName "\K(.*?)(?=")' ./${APP_FOLDER}/build.gradle`
-hub release create -a ./app/build/outputs/apk/release/app-release.apk -m "${RELEASE_TITLE} - v${VERSION_NAME}" $(date +%Y%m%d%H%M%S)
 
 
 # Required since https://github.blog/2022-04-12-git-security-vulnerability-announced
