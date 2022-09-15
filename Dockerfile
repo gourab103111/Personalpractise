@@ -17,7 +17,7 @@ RUN apt update \
 	&& apt autoremove \
 	&& apt autoclean \
 	&& apt clean \
-	&& install -g firebase-tools
+	&& install firebase-tools
 
 
 ADD entrypoint.sh /entrypoint.sh
