@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#comments11
 #hub release create -a ./test1-release.apk -m "v${GITHUB_REF##*/}" ${GITHUB_REF##*/} 
 hub checkout ${${REPO_BRANCH}:-master}
 VERSION_NAME=`grep -oP 'versionName "\K(.*?)(?=")' ./${APP_FOLDER}/build.gradle`
