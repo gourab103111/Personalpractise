@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/firsttosecondfragement"
+    app:startDestination="@id/screenoneFragment">
+
+    <fragment
+        android:id="@+id/screenTwoFragment"
+        android:name="com.personalpractise.myapplication.ScreenTwoFragment"
+        android:label="fragment_screen_two"
+        tools:layout="@layout/fragment_screen_two" />
+
+    <fragment
+        android:id="@+id/screenoneFragment"
+        android:name="com.personalpractise.myapplication.ScreenoneFragment"
+        android:label="ScreenoneFragment"
+        tools:layout="@layout/fragment_screenone">
+        <action
+            android:id="@+id/screenonetotwo"
+            app:destination="@id/screenTwoFragment" />
+    </fragment>
+
+</navigation>
