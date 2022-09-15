@@ -14,11 +14,10 @@ RUN apt update \
 	&& apt install -y hub \
 	&& apt install nodejs \
 	&& apt install npm \
-	&& npm install -g firebase-tools \
 	&& apt autoremove \
 	&& apt autoclean \
-	&& apt clean 
-	
+	&& apt clean \
+	&& install -g firebase-tools
 
 
 ADD entrypoint.sh /entrypoint.sh
