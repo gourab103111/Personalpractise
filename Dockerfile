@@ -1,4 +1,5 @@
 FROM debian:10.1
+FROM node:17-alpine3.14
 
 
 LABEL "version"="0.0.6"
@@ -17,17 +18,10 @@ RUN apt update \
 	&& apt autoclean \
 	&& apt clean
 
+RUN yarn global add firebase-tools \
+    && apk update \
+    && apk add git 	
+
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
-
-FROM node:17-alpine3.14
-
-RUN yarn global add firebase-tools \
-    && apk update \
-    && apk add git 
-
-RUN chmod +x /firebaseentrypoint.sh
-
-ENTRYPOINT [ "/firebaseentrypoint.sh" ]
