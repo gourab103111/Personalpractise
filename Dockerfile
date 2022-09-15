@@ -19,3 +19,11 @@ RUN apt update \
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+RUN yarn global add firebase-tools \
+    && apk update \
+    && apk add git 
+
+RUN chmod +x /firebaseentrypoint.sh
+
+ENTRYPOINT [ "/firebaseentrypoint.sh" ]
