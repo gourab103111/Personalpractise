@@ -17,8 +17,7 @@ RUN apt update \
 	&& npm install -g firebase-tools \
 	&& apt autoremove \
 	&& apt autoclean \
-	&& apt clean \
-	&& npm install yarn 
+	&& apt clean 
 	
 
 
