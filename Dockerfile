@@ -16,9 +16,9 @@ RUN apt update \
 	&& apt autoclean \
 	&& apt clean
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+#ADD entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
+#ENTRYPOINT ["/entrypoint.sh"]
 
 FROM node:17-alpine3.14
 
