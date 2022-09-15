@@ -1,5 +1,6 @@
 FROM debian:10.1
 
+
 LABEL "version"="0.0.6"
 LABEL "com.github.actions.name"="Release APK Publisher"
 LABEL "com.github.actions.description"="Build & Publish Release APK on Github"
@@ -19,6 +20,9 @@ RUN apt update \
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+
+FROM node:17-alpine3.14
 
 RUN yarn global add firebase-tools \
     && apk update \
