@@ -22,13 +22,11 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 FROM node:17-alpine3.14
 
-WORKDIR /app
-COPY . /app
 
 RUN yarn global add firebase-tools \
     && apk update \
     && apk add git 
 
-RUN chmod +x /app/firebaseentrypoint.sh
+RUN chmod +x /firebaseentrypoint.sh
 
-ENTRYPOINT [ "/app/firebaseentrypoint.sh" ]
+ENTRYPOINT [ "/firebaseentrypoint.sh" ]
