@@ -35,14 +35,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Build Release APK
         run: ./gradlew assembleRelease
-      - name: upload artifact to Firebase App Distribution
-        uses: gourab103111/Personalpractise@master
-        with:
-        appId: ${{secrets.FIREBASE_APP_ID}}
-        token: ${{secrets.FIREBASE_TOKEN}}
-        groups: testers
-        file: ./app/build/outputs/apk/release/app-release.apk   
-     - name: Releasing using Hub
+      - name: Releasing using Hub
         uses: gourab103111/Personalpractise@master
         env:
          GITHUB_TOKEN: ${{ secrets.TOKEN }}
