@@ -10,6 +10,5 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-runs:
-  using: 'docker'
-  image: 'Dockerfiletwo'  
+  image: 'Dockerfiletwo'
+ 
