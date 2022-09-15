@@ -1,6 +1,4 @@
 FROM debian:10.1
-FROM node:17-alpine3.14
-
 
 LABEL "version"="0.0.6"
 LABEL "com.github.actions.name"="Release APK Publisher"
@@ -17,10 +15,6 @@ RUN apt update \
 	&& apt autoremove \
 	&& apt autoclean \
 	&& apt clean
-
-RUN yarn global add firebase-tools \
-    && apk update \
-    && apk add git 	
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
